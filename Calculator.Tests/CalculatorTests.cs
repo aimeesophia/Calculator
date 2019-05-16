@@ -9,14 +9,18 @@ namespace Calculator.Tests
         {
         }
 
-        [Test]
-        public void Calculator_Adds_Two_Numbers_Together()
+        [TestCase(1, 2)]
+        [TestCase(3, 4)]
+        [TestCase(5, 6)]
+        [TestCase(7, 8)]
+        [TestCase(9, 10)]
+        public void Calculator_Adds_Two_Numbers_Together(int x, int y)
         {
             // Arrange
-            var expected = 4;
+            var expected = x + y;
 
             // Act
-            var actual = Calculator.Add(2, 2);
+            var actual = Calculator.Add(x, y);
 
             // Assert
             Assert.AreEqual(expected, actual);
